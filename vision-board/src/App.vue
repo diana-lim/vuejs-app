@@ -2,7 +2,7 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <h1>2021 Vision Board</h1>
-    <Goals v-bind:goals="goals" />
+    <Goals v-bind:goals="goals"/>
   
   </div>
 </template>
@@ -31,7 +31,7 @@ export default {
         {
           id: 3,
           title: "Monetize one YouTube channel",
-          completed: false
+          completed: true
         }
       ]
     }
