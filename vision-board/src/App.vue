@@ -3,17 +3,20 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <h1>2021 Vision Board</h1>
     <Goals v-bind:goals="goals"/>
+    <AddGoal v-on:add-goal="addGoal" />
   
   </div>
 </template>
 
 <script>
 import Goals from './components/Goals';
+import AddGoal from './components/AddGoal';
 
 export default {
   name: 'App',
   components: {
-    Goals
+    Goals,
+    AddGoal
   },
   data(){
     return {
@@ -35,6 +38,9 @@ export default {
         }
       ]
     }
+  },
+  addGoal(newGoal){
+    this.goals = [...this.goals, newGoal];
   }
 }
 </script>
@@ -52,5 +58,18 @@ body {
   background-color: #061639;
   color: #fff;
   text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  background: #555;
+  color: #fff;
+  padding: 7px 20px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #666;
 }
 </style>
